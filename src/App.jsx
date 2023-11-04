@@ -13,6 +13,7 @@ import Signup from '../src/pages/Signup';
 import {  Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+
 const App = () => {
 
   const [products, setProducts] = useState([]);
@@ -44,12 +45,13 @@ const App = () => {
      
         <Navbar onSearch={handleSearch} />
     <Routes>
-      
+    
         
           <Route path="/" element={< Home />} /> 
           <Route path="/about" element={<About/>} />
           <Route  path="/products" element={<Products productcard={products} searchQuery={searchQuery} />} />
           <Route path="/contact" element={<Contact/>} />
+          
           <Route path="/product-details/:id" element={<ProductDetails/>} />
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />

@@ -1,111 +1,161 @@
-import React, { useEffect, useState } from 'react';
-import img from "../images/cloth.png";
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import Footer from '../../components/Footer';
-
-const Products = () => {
-  const myStyle = {
-    width: "19rem",
-  };
-
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await axios.get("https://fakestoreapi.com/products");
-        const data = response.data;
-        setProducts(data);
-        console.log(data);
-      } catch (error) {
-        console.error('error fetching data', error);
-      }
-    }
-    fetchData();
-  }, []);
-
-  return (
-    <div className="container">
-      <div className="row p-4 p-md-5 mb-5 rounded text-body-emphasis bg-body-secondary rounded-4 mt-5">
-        <div className="col-md-8">
-          <h1 className="display-4 fst-italic mainheading fw-bold">Our Products</h1>
-          <p className="lead my-3">
-            Multiple lines of text that form the lede, informing new readers
-            quickly and efficiently about what’s most interesting in this post’s
-            contents.
-          </p>
-          <p className="lead mb-0">
-            <a href="#" className="text-body-emphasis btn btn-info fw-bold">
-              Shop Now
-            </a>
-          </p>
-        </div>
-        <div className="col-md-4">
-          <div id="carouselExampleAutoplaying" className="carousel slide mx-5" data-bs-ride="carousel">
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img src={img} alt="Product" width="200" height="250" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-md-2 mx-5 mt-5 filter-products">
-          <h5 className="fw-bold">Sort A To Z</h5>
-          {/* Add your form-check inputs and labels here */}
-          {/* ...
-
-          Your filter options go here
-
-          ... */}
-        </div>
-
-        <div className="col-md-10">
-          <h1 className="featured-title mainheading">Products Collection</h1>
-          <h5 className="f-h">
-            🔥 Hurry, Limited Time Offer! Get the Trendy Widget X1 at $19.99 - 50% OFF! 🔥
-          </h5>
-
-          <div className="row">
-            {products.map((product) => (
-              <Link to={`/product-details/${product.id}`} style={{ textDecoration: "none" }} key={product.id}>
-                <div className="col-md-3 mb-4">
-                  <div className="card custom-card" style={myStyle}>
-                    <img src={product.image} className="card-img-top p-2" alt={product.title} />
-                    <div className="card-body">
-                      <h5 className="card-title">{product.title.slice(0, 15)}.....</h5>
-                      <a href="#" className="btn btn-warning first">${product.price}</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <title>Mobile Responsive Example</title>
+    <style>
+        /* You can add custom CSS rules here if needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="home-section">
+            <div class="home-container my-3 mx-1 mx-md-5" data-aos="slide-left">
+                <div class="row home-item">
+                    <div class="col-12 col-md-8">
+                        <h1 class="home-heading">Elevate Your Shopping Journey</h1>
+                        <h4 class="text-white mb-3">Experience Shopping in Its Purest Form</h4>
+                        <a href="/products" class="btn btn-dark">Shop Now</a>
+                        <button type="button" class="btn btn-light text-dark">Learn More</button>
                     </div>
-                  </div>
+
+                    <div class="col-12 col-md-4">
+                        <img class="home-img img-fluid" src={img7} alt="Shopping Girl" />
+                    </div>
                 </div>
-              </Link>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className="container-news-letter m-4">
-        <div className="container-news">
-          <h1>Subscribe to Our Newsletter</h1>
-          <p>Stay up to date with the latest news and updates.</p>
-
-          <form>
-            <div className="form-group col-md-4">
-              <label htmlFor="email">Email address:</label>
-              <input type="email" className="form-control mt-3" id="email" placeholder="Enter your email" />
             </div>
-            <button type="submit" className="btn btn-primary mt-3">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
-      <Footer />
-    </div>
-  );
-};
 
-export default Products;
+            <h1 class="feature-heading mt-5">Featured Products</h1>
+            <div class="feature-container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mx-1 mx-md-5" data-aos="fade-up">
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card shadow">
+                            <img src={img4} class="card-img-top img-fluid" alt="Clothing" />
+                            <div class="card-body">
+                                <h2 class="card-title text-center">Clothing</h2>
+                                <div class="text-center">
+                                    <h5 class="rate-f">Rate Start From $10</h5>
+                                </div>
+                                <a href="/products" class="btn btn-outline-warning f-btn">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card shadow">
+                            <img src={img5} class="card-img-top img-fluid" alt="Jewelry" />
+                            <div class="card-body">
+                                <h2 class="card-title text-center">Jewelry</h2>
+                                <div class="text-center">
+                                    <h5 class="rate-f">Rate Start From $20</h5>
+                                </div>
+                                <a href="/products" class="btn btn-outline-warning f-btn">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="card shadow">
+                            <img src={img6} class="card-img-top img-fluid" alt="Electronic" />
+                            <div class="card-body">
+                                <h2 class="card-title text-center">Electronic</h2>
+                                <div class="text-center">
+                                    <h5 class="rate-f">Rate Start From $50</h5>
+                                </div>
+                                <a href="/products" class="btn btn-outline-warning f-btn">View Products</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-exp mt-5" data-aos="fade-up">
+                <h1 class="title-exp p-3 p-md-5">Experience Streamlined Shopping with Crescendo</h1>
+                <div class="about-exp-grid">
+                    <div class="text-center p-3 p-md-5">
+                        <h1><TbTruckDelivery/></h1>
+                        <h4>Free Delivery</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere obcaecati cupiditate, voluptatum exercitationem temporibus natus! Optio facilis exercitationem voluptates.</p>
+                    </div>
+                    <div class="text-center p-3 p-md-5">
+                        <h1><AiOutlineShopping/></h1>
+                        <h4>Self Pickup</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere obcaecati cupiditate, voluptatum exercitationem temporibus natus! Optio facilis exercitationem voluptates.</p>
+                    </div>
+                    <div class="text-center p-3 p-md-5">
+                        <h1><MdOutlineGppGood/></h1>
+                        <h4>Warranty</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis facere obcaecati cupiditate, voluptatum exercitationem temporibus natus! Optio facilis exercitationem voluptates.</p>
+                    </div>
+                </div>
+                <div class="about-btn mt-3">
+                    <a href="/products" class="btn btn-primary">Shop Now</a>
+                </div>
+            </div>
+
+            <h1 class="title-exp p-3 p-md-5">Why Crescendo?</h1>
+
+            <div class="row why-main p-3 p-md-5" data-aos="zoom-out">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h3><BiSolidRightArrow class='item-why' fontSize={20}/> Exceptional Sound Quality</h3>
+                    <h5 class='px-4 why-p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius commodo aliquam.</h5>
+                    <br/>
+                    <h3><BiSolidRightArrow class='item-why' fontSize={20}/> Versatile and User-Friendly</h3>
+                    <h5 class='px-4 why-p'>Maecenas eu dui dictum, imperdiet metus et, dapibus nisl. Integer sit amet augue magna.</h5>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <img src={img1} class='img-why img-fluid' />
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h3><BiSolidRightArrow class='item-why' fontSize={20}/> Innovative Design</h3>
+                    <h5 class='px-4 why-p'>Mauris laoreet congue ipsum at ultricies. Phasellus mattis dictum neque, vel sagittis odio pellentesque at.</h5>
+                    <br/>
+                    <h3><BiSolidRightArrow class='item-why' fontSize={20}/> Superior Build and Durability</h3>
+                    <h5 class='px-4 why-p'>Aliquam vel augue sed justo sagittis lobortis. Vestibulum porttitor sit amet magna id elementum.</h5>
+                </div>
+            </div>
+
+            <div class="row join d-flex flex-row flex-wrap mt-5 mx-3 mx-md-5" data-aos="flip-down">
+                <div class="col-12 col-md-6">
+                    <img src={img2} class='join-img img-fluid' />
+                </div>
+                <div class="col-12 col-md-6 join2 p-3 p-md-5">
+                    <h1>Join Our List Today!</h1>
+                    <h4>Be the first to know</h4>
+                    <br/>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5><AiOutlineCheckCircle className='happy-icon'/> Limited edition products</h5>
+                            <h5><AiOutlineCheckCircle className='happy-icon'/> Special offers</h5>
+                        </div>
+                        <div class="col-6">
+                            <h5><AiOutlineCheckCircle className='happy-icon'/> Exclusive contents</h5>
+                            <h5><AiOutlineCheckCircle className='happy-icon'/> No spams!</h5>
+                        </div>
+                    </div>
+                    <form action="" class='col-12 col-md-6 mt-3'>
+                        <input placeholder='Email' class='join-input form-control' type='text'>
+                        </input>
+                        <button type="submit" class="btn btn-primary p-3 mt-4">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="px-3 px-md-5 py-5 my-5 text-center" data-aos="zoom-out">
+                <FcShop className='blog'/>
+                <h1 class="display-5 fw-bold text-body-emphasis">Crescendo</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open-source toolkit, featuring Sass variables and mixins, a responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <a href="/products" class="btn btn-primary btn-lg px-4 gap-3">Shop Now</a>
+                        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
