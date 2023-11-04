@@ -1,0 +1,111 @@
+import React, { useEffect, useState } from 'react';
+import img from "../images/cloth.png";
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer';
+
+const Products = () => {
+  const myStyle = {
+    width: "19rem",
+  };
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("https://fakestoreapi.com/products");
+        const data = response.data;
+        setProducts(data);
+        console.log(data);
+      } catch (error) {
+        console.error('error fetching data', error);
+      }
+    }
+    fetchData();
+  }, []);
+
+  return (
+    <div className="container">
+      <div className="row p-4 p-md-5 mb-5 rounded text-body-emphasis bg-body-secondary rounded-4 mt-5">
+        <div className="col-md-8">
+          <h1 className="display-4 fst-italic mainheading fw-bold">Our Products</h1>
+          <p className="lead my-3">
+            Multiple lines of text that form the lede, informing new readers
+            quickly and efficiently about what’s most interesting in this post’s
+            contents.
+          </p>
+          <p className="lead mb-0">
+            <a href="#" className="text-body-emphasis btn btn-info fw-bold">
+              Shop Now
+            </a>
+          </p>
+        </div>
+        <div className="col-md-4">
+          <div id="carouselExampleAutoplaying" className="carousel slide mx-5" data-bs-ride="carousel">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img src={img} alt="Product" width="200" height="250" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row">
+        <div className="col-md-2 mx-5 mt-5 filter-products">
+          <h5 className="fw-bold">Sort A To Z</h5>
+          {/* Add your form-check inputs and labels here */}
+          {/* ...
+
+          Your filter options go here
+
+          ... */}
+        </div>
+
+        <div className="col-md-10">
+          <h1 className="featured-title mainheading">Products Collection</h1>
+          <h5 className="f-h">
+            🔥 Hurry, Limited Time Offer! Get the Trendy Widget X1 at $19.99 - 50% OFF! 🔥
+          </h5>
+
+          <div className="row">
+            {products.map((product) => (
+              <Link to={`/product-details/${product.id}`} style={{ textDecoration: "none" }} key={product.id}>
+                <div className="col-md-3 mb-4">
+                  <div className="card custom-card" style={myStyle}>
+                    <img src={product.image} className="card-img-top p-2" alt={product.title} />
+                    <div className="card-body">
+                      <h5 className="card-title">{product.title.slice(0, 15)}.....</h5>
+                      <a href="#" className="btn btn-warning first">${product.price}</a>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-news-letter m-4">
+        <div className="container-news">
+          <h1>Subscribe to Our Newsletter</h1>
+          <p>Stay up to date with the latest news and updates.</p>
+
+          <form>
+            <div className="form-group col-md-4">
+              <label htmlFor="email">Email address:</label>
+              <input type="email" className="form-control mt-3" id="email" placeholder="Enter your email" />
+            </div>
+            <button type="submit" className="btn btn-primary mt-3">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Products;
