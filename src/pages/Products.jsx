@@ -76,7 +76,10 @@ const handleSort = (order) => {
 
   return (
     <>
-     <div className="container">
+    <div className='product-container'>
+
+   
+     <div className="container text-center ">
      <div className="row p-4 p-md-5 mb-5 rounded text-body-emphasis bg-body-secondary rounded-4 mt-5">
         <div className="col-md-8">
           <h1 className="display-4 fst-italic mainheading fw-bold">Our Products</h1>
@@ -102,11 +105,11 @@ const handleSort = (order) => {
         </div>
       </div>
       </div>
-      <div className="container  ">
+      <div className="container product-text text-center ">
            <h1 class=" featured-title  mainheading  "> Products Collection</h1>
-          <div >
+          <div   >
 
-          <h5 class="  f-h ">
+          <h5 className='normal-smal  product-text-2' >
           🔥 Hurry, Limited Time Offer! Get the Trendy Widget X1 at $19.99 - 50% OFF! 🔥
           </h5>
           </div>
@@ -219,7 +222,7 @@ const handleSort = (order) => {
         </div>
 
           
-        <div class="col d-flex flex-row flex-wrap mt-5  ">
+        <div class="col d-flex flex-row flex-wrap mt-5 product-li ">
        
           {/* map data and show products  */}
       
@@ -275,7 +278,7 @@ const handleSort = (order) => {
         </div>
       </div>
       <Footer/>
-     
+      </div>
     </>
   )
 }

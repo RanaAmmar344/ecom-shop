@@ -18,15 +18,15 @@ const About = () => {
   
    <>
    <section class='about-body'>
-    <div class='about-heading'> About Crescendo</div>
+    <div class='about-heading mt-4 heading-res'> About Crescendo</div>
    <div class='row  aboutmain'data-aos="fade-up-right" >
-    <div class="col-md-6 ">
+    <div class="col-md-6 about-cover-res ">
    <img  class='about-cover' src={img}  height={500} width={600} />
     </div>
     
       <div class="col-md-5 about-cover-2">
         <h1> Our Store </h1>
-        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quaerat repellat id aut, esse repellendus non ex quos nulla quae blanditiis nostrum molestiae ut similique ea. Mollitia in placeat debitis exercitationem corrupti ipsam, quisquam maxime magnam accusamus alias, porro asperiores.</h5>
+        <h5 className='about-cover-font'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quaerat repellat id aut, esse repellendus non ex quos nulla quae blanditiis nostrum molestiae ut similique ea. Mollitia in placeat debitis exercitationem corrupti ipsam, quisquam maxime magnam accusamus alias, porro asperiores.</h5>
       </div>
    </div>
    {/* year of experience */}
@@ -89,7 +89,7 @@ const About = () => {
    <div className="container-exp" data-aos="fade-up">
 
    
-    <h1 class='title-exp p-5'>Experience Streamlined Shopping with Crescendo</h1>
+    <h1 class='title-exp p-5 text-center'>Experience Streamlined Shopping with Crescendo</h1>
    <div className=" about-exp-grid">
     <div className="text-center p-5 ">
       <h1><TbTruckDelivery/></h1>

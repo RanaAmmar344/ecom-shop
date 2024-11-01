@@ -13,7 +13,7 @@ const Footer = () => {
 
     <div class="col-md-4 offset-md-1 mb-3 mx-3 footer-sec-1">
       <img src={img1} alt="Bootstrap "  class="change-color mb-2"  width="150" height="30"/>
-      <p class='footer-text'> Suspendisse quis sodales nunc. Sed ligula enim, mattis ut sem id, mollis sagittis sapien.</p>
+      <p class='footer-text'> Suspendisse quis `sodales nunc. Sed ligula enim, mattis ut sem id, mollis sagittis sapien.</p>
         <form>
           <h5>Subscribe to our newsletter</h5>
           <p>Monthly digest of what's new and exciting from us.</p>
