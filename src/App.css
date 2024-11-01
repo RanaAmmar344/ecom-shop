@@ -1,9 +1,9 @@
 
 
 body{
-    margin: 0px;
+    margin: 0;
     background-color:    #F7F8FF;
-    padding: 0px;
+    padding: 0;
     
 
     
@@ -11,6 +11,8 @@ body{
 }
 .home-section{
     width: 100%;
+    overflow: hidden;
+    height: auto;
 }
 .user-icon{
 
@@ -437,8 +439,8 @@ padding-right: 22px;
 }
 
 .feature-container{
-    
-    height: 520px;
+    width: auto;
+    height: auto;
 }
 
                              /* Why  */
@@ -471,6 +473,7 @@ color: #4f77d5;
 
     display: grid;
    grid-template-columns: repeat(2,1fr);
+
   
 
 
@@ -556,6 +559,69 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 
 
+
+/* ------------------------------------responsive query----------------------------------------- */
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+    /* home */
+    .home-heading{
+
+        font-size: 40px;
+        
+    }
+    .small-text{
+        font-size: 10px;
+    }
+    .home-img{
+        visibility: hidden;
+    }
+    .home-container{
+        height: 400px;
+        padding-top: 70px;
+    }
+    .about-exp-grid{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .normal-small{
+        font-size: 20px;
+    }
+    .crescendo-img {
+        
+        position: relative;
+        right: 60px;
+    }
+  .happay{
+    width: auto;
+    height: auto;
+    border-radius: 0%;
+
+  }
+  .join-img{
+    width: 200px;
+    height: 200px;
+  }
+  .join-res{
+    height: 900px;
+  }
+  .join-input{
+
+    width: auto;
+  }
+  .footer-link{
+
+display: none;
+  }
+  .footer-sec-1{
+
+    position: relative;
+    right: 20px;
+  }
+  
+
+ }
+ 
 
 
 

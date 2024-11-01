@@ -43,11 +43,11 @@ const Home = () => {
   return (
     <>
       <section class="home-section " >
-        <div class="home-container m-5 " data-aos="slide-left" >
+        <div class="home-container m-5 " >
           <div class="row home-item " >
-            <div class="col-md-8">
-              <h1 class="home-heading">Elevate Your Shoping Journey</h1>
-              <h4 class="text-white mb-3">Experience Shopping in Its Purest Form</h4>
+            <div class="col-md-8 ">
+              <h1 class="home-heading  ">Elevate Your Shoping Journey</h1>
+              <h4 class="text-white mb-3 small-text">Experience Shopping in Its Purest Form</h4>
               <Link to="/products">
                 <button type="button" class="btn btn-dark">
                   Shop Now
@@ -125,7 +125,7 @@ const Home = () => {
         <div class="container-exp  " data-aos="fade-up">
 
    
-<h1 class='title-exp p-5'>Experience Streamlined Shopping with Crescendo</h1>
+<h1 class='title-exp text-center mt-5'>Experience Streamlined Shopping with Crescendo</h1>
 <div class=" about-exp-grid   ">
 <div class="text-center p-5 ">
   <h1><TbTruckDelivery/></h1>
@@ -159,20 +159,20 @@ const Home = () => {
 <div class="row why-main p-5 " data-aos="zoom-out">
   <div class="col-md-4 ">
     
-  <h3 ><BiSolidRightArrow class='item-why' fontSize={20}/>Exceptional Sound Quality</h3>
+  <h3 className='normal-small' ><BiSolidRightArrow class='item-why' fontSize={20}/>Exceptional Sound Quality</h3>
     <h5 class='px-4  why-p'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius commodo aliquam.</h5>
 <br/>
-<h3><BiSolidRightArrow class='item-why' fontSize={20}/>Versatile and User-Friendly</h3>
+<h3 className='normal-small'><BiSolidRightArrow class='item-why' fontSize={20}/>Versatile and User-Friendly</h3>
 <h5 class='px-4 why-p'>Maecenas eu dui dictum, imperdiet metus et, dapibus nisl. Integer sit amet augue magna.</h5>
   </div>
   <div class="col-md-4 ">
-<img src={img1} class='img-why' width={200} />
+<img src={img1} class='img-why crescendo-img ' width={200} />
   </div>
   <div class="col-md-4">
-    <h3><BiSolidRightArrow class='item-why' fontSize={20}/>Innovative Design</h3>
+    <h3 className='normal-small'><BiSolidRightArrow class='item-why' fontSize={20}/>Innovative Design</h3>
     <h5 class='px-4 why-p'>Mauris laoreet congue ipsum at ultricies. Phasellus mattis dictum neque, vel sagittis odio pellentesque at.</h5>
   <br/>
-  <h3><BiSolidRightArrow class='item-why' fontSize={20}/>Superior Build and Durability</h3>
+  <h3 className='normal-small'><BiSolidRightArrow class='item-why' fontSize={20}/>Superior Build and Durability</h3>
   <h5 class='px-4 why-p'>Aliquam vel augue sed justo sagittis lobortis. Vestibulum porttitor sit amet magna id elementum.</h5>
   </div>
 </div>
@@ -180,7 +180,7 @@ const Home = () => {
 
 {/* join our list to day */}
 
-<div className="row join d-flex flex-row flex-wrap mt-5  mx-5" data-aos="flip-down" >
+<div className="row join d-flex flex-row join-res flex-wrap mt-5  mx-5" data-aos="flip-down" >
   <div className="col-md-5 happay">
     <img src={img2} className='join-img' width={450} height={500} />
 

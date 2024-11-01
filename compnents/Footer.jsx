@@ -11,7 +11,7 @@ const Footer = () => {
     <footer class="py-5 custom-footer px-4  mt-5">
     <div class="row  ">
 
-    <div class="col-md-4 offset-md-1 mb-3 mx-3">
+    <div class="col-md-4 offset-md-1 mb-3 mx-3 footer-sec-1">
       <img src={img1} alt="Bootstrap "  class="change-color mb-2"  width="150" height="30"/>
       <p class='footer-text'> Suspendisse quis sodales nunc. Sed ligula enim, mattis ut sem id, mollis sagittis sapien.</p>
         <form>
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
         </form>
       </div>
-      <div class="col-6 col-md-2 mb-3 mx-4 ">
+      <div class="col-6 col-md-2 mb-3 mx-4  footer-link ">
         <h5>Section</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Home</a></li>
