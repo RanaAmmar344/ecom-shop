@@ -16,7 +16,7 @@ const Contact = () => {
   return (
     <>
       
-<section class="mb-4">
+<section class="mb-4 home-section">
 
     
     <h2 class="h1-responsive font-weight-bold text-center my-4 about-heading">Contact us</h2>

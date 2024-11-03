@@ -592,6 +592,9 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         height: 400px;
         padding-top: 70px;
     }
+    .noraml-small-2{
+        font-size: 16px;
+    }
     .about-exp-grid{
         display: flex;
         flex-direction: column;
@@ -609,18 +612,23 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: auto;
     height: auto;
     border-radius: 0%;
+    
+    
 
   }
   .join-img{
     width: 200px;
     height: 200px;
+    position: relative;
+    top: 43px;
+   
   }
   .join-res{
     height: 900px;
   }
   .join-input{
 
-    width: auto;
+    width: 100%;
   }
   .footer-link{
 
@@ -717,6 +725,10 @@ right: 30px;
 
     margin-left: 0;
     
+}
+.text-icon{
+
+    width: 30px;
 }
 
  }

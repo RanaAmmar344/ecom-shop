@@ -100,7 +100,7 @@ const Home = () => {
         </div>
         <div class="col">
           <div class="card shadow-sm">
-          <img src={img6} width={300} height={255} class='m-auto p-3'/>
+          <img src={img6} width={300} height={255} class='m-auto p-5'/>
             <div class="card-body">
               <h2 class="card-text text-center"> Electronic  </h2>
               <div class=" text-center">
@@ -185,19 +185,19 @@ const Home = () => {
     <img src={img2} className='join-img' width={450} height={500} />
 
   </div>
-  <div className="col-md-6 join2 p-5 ">
+  <div className="col-md-6 join2 p-5  ">
     <h1>Join Our List Today!</h1>
     <h4>Be the first to know</h4>
     <br/>
     <div className="row  ">
       <div className="col-md-6">
-      <h5><AiOutlineCheckCircle className='happy-icon'/>Limited edition products</h5>
-      <h5><AiOutlineCheckCircle className='happy-icon'/>Special offers</h5>
+      <h5 className='noraml-small-2'><AiOutlineCheckCircle className='happy-icon'/>Limited edition products</h5>
+      <h5 className='noraml-small-2'><AiOutlineCheckCircle className='happy-icon'/>Special offers</h5>
       </div>
       
       <div className="col-md-6">
-      <h5><AiOutlineCheckCircle className='happy-icon'/>Exclusive contents</h5>
-      <h5><AiOutlineCheckCircle className='happy-icon'/>No spams!</h5>
+      <h5 className='noraml-small-2'><AiOutlineCheckCircle className='happy-icon'/>Exclusive contents</h5>
+      <h5 className='noraml-small-2'><AiOutlineCheckCircle className='happy-icon'/>No spams!</h5>
       </div>
       
       
